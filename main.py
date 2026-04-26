@@ -3,6 +3,7 @@ import requests
 from dotenv import load_dotenv
 from openai import OpenAI
 import re
+import json
 
 # Load env variables
 load_dotenv()
@@ -237,7 +238,11 @@ def main():
 
         # 🤖 AI Analysis
         print("\n🧠 AI Insights:")
-        print(cleaned_ai)
+        try:
+            ai_data = json.loads(cleaned_ai)
+            print(ai_data["explanation"])
+        except:
+            print(cleaned_ai)
 
         print("="*50 + "\n")
 
