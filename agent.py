@@ -31,6 +31,7 @@ Return only one word.
     valid = ["fetch_contract", "run_static", "run_ai", "done"]
     return action if action in valid else decide_next_step(state)
 
+
 def run_agent(address):
     state = {
         "address": address,

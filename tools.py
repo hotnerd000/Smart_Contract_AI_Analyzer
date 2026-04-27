@@ -12,9 +12,11 @@ import time
 
 def ai_analysis(prompt, retries=3):
     models = [
-        "nvidia/nemotron-3-super-120b-a12b:free",  # primary
-        "google/gemma-3-4b-it:free",               # fallback 1
-        "mistralai/mistral-7b-instruct:free"       # fallback 2
+        # "tencent/hy3-preview:free",
+        # "nvidia/nemotron-3-super-120b-a12b:free",  # primary
+        # "google/gemma-3-4b-it:free",               # fallback 1
+        # "mistralai/mistral-7b-instruct:free"       # fallback 2
+        "openai/gpt-oss-120b:free"
     ]
 
     for model in models:
