@@ -1,4 +1,4 @@
-# 🛡️ Smart Contract AI Analyzer
+# 🛡️ AI Smart Contract Auditor Agent
 
 ![Python](https://img.shields.io/badge/Python-3.10-blue)
 ![Web3](https://img.shields.io/badge/Web3-Smart%20Contracts-purple)
@@ -7,20 +7,47 @@
 
 ![Demo](demo.gif)
 
-An AI-powered command-line tool that analyzes Ethereum smart contracts for potential security risks and vulnerabilities.
+## 🚀 Overview
+This project is an **AI-powered Smart Contract Auditor Agent** designed to analyze blockchain contracts dynamically using an agent-based architecture.
 
-This tool combines **static analysis (rule-based detection)** with **LLM-powered reasoning** to provide structured insights about contract safety.
+Unlike traditional analyzers, this system **decides what to do next** based on the current state:
+👉 Think → Act → Observe → Repeat
 
 ---
 
 ## 🚀 Features
 
-- 🔎 Analyze smart contracts using contract address
-- 🧠 AI-powered security insights (LLM-based)
-- ⚠️ Static vulnerability detection (reentrancy, access control, etc.)
-- 🎯 Risk scoring (0–10)
-- 🎨 Color-coded CLI output (Low / Medium / High risk)
-- 🧩 Combines deterministic rules + AI reasoning
+- 🤖 AI-powered smart contract analysis  
+- 🧠 Agent-based decision system (dynamic step selection)  
+- 🔁 Multi-model fallback via OpenRouter (Nemotron, Gemma, Mistral)  
+- 🔍 Static vulnerability detection (Reentrancy, Delegatecall, tx.origin, etc.)  
+- 🌐 Smart contract fetching via Etherscan API  
+- 📊 AI-generated risk scoring and explanations  
+- 🧾 Structured JSON output for integration  
+- 📡 Step-by-step logging system for debugging  
+- ⚡ Retry + fallback handling for rate-limited models  
+- 🧱 Clean modular architecture  
+
+---
+
+## 🤖 AI Agent Architecture
+
+This project implements a simple but powerful agent loop:
+
+1. 🧠 Decide next action  
+2. ⚙️ Execute tool (fetch, analyze, AI)  
+3. 📊 Observe result  
+4. 🔁 Repeat until done  
+
+---
+
+## 🛠 Tech Stack
+
+- 🐍 Python  
+- 🤖 OpenRouter API  
+- 🌐 Etherscan API  
+- 📊 Logging system  
+- 🧠 AI Agent architecture  
 
 ---
 
@@ -44,16 +71,15 @@ This tool combines **static analysis (rule-based detection)** with **LLM-powered
 
 ---
 
-## 💡 Why This Project?
+## 📁 Project Structure
 
-Smart contract security is critical in Web3, but audits are expensive and time-consuming.
-
-This tool provides:
-- Instant AI-powered insights
-- Pre-audit risk detection
-- Developer-friendly explanations
-
-It bridges the gap between traditional static analysis and modern AI reasoning.
+- main.py → Entry point  
+- agent.py → Agent loop & decision logic  
+- tools.py → Tool functions  
+- analyzer.py → Static vulnerability detection  
+- etherscan.py → Contract fetching  
+- logger.py → Logging system  
+- config.py → API setup  
 
 ---
 
@@ -152,19 +178,27 @@ The contract shows moderate risk due to external call usage...
 
 ## ⚠️ Limitations
 
-- Only works with verified contracts (Etherscan)
-- AI analysis may not be 100% accurate
-- Not a replacement for professional security audits
+- Keyword-based detection (not full static analysis)  
+- Depends on verified contracts  
+- AI responses may vary 
+
+---
+
+## 🎯 Why This Project Matters
+
+This project demonstrates:
+- 🧠 AI Agent system design  
+- 🔗 Web3 security analysis  
+- ⚙️ Production-level engineering patterns  
 
 ---
 
 ## 🔮 Future Improvements
 
-- Multi-chain support (BSC, Polygon)
-- Slither integration for deeper analysis
-- Web UI (FastAPI or React frontend)
-- PDF report generation
-- Contract address batch analysis
+- 🔍 Integrate Slither for deeper analysis  
+- 🤖 Multi-agent system  
+- 🌐 Web dashboard for visualization  
+- 📊 Dataset generation for training  
 
 ---
 
@@ -187,15 +221,6 @@ AI + Web3 Developer specializing in:
 - Blockchain security
 
 Available for freelance projects.
-
----
-
-## 🔮 Roadmap
-
-- Integrate Slither for deeper static analysis
-- Add multi-chain support (Polygon, BSC)
-- Web dashboard (FastAPI + React)
-- Batch contract analysis
 
 ---
 
