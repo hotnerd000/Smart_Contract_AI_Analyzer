@@ -13,24 +13,30 @@ def decide_next_step(state):
     return "done"
 
 def decide_next_step_ai(state):
-    prompt = f'''
+    prompt = f"""
 You are an AI agent controlling a smart contract analyzer.
 
-State:
-{state}
+Current state:
+- code exists: {state["code"] is not None}
+- issues exist: {state["issues"] is not None}
+- analysis exists: {state["analysis"] is not None}
 
-Choose next action:
-- fetch_contract
-- run_static
-- run_ai
-- done
+Rules:
+- If code does NOT exist → fetch_contract
+- If code exists but issues do NOT → run_static
+- If issues exist but analysis does NOT → run_ai
+- If everything exists → done
 
-Return only one word.
-'''
+IMPORTANT:
+- Do NOT repeat a step if it is already completed
+- Always move forward
+
+Return ONLY one word:
+fetch_contract | run_static | run_ai | done
+"""
     action = ai_analysis(prompt).strip().lower()
     valid = ["fetch_contract", "run_static", "run_ai", "done"]
     return action if action in valid else decide_next_step(state)
-
 
 def run_agent(address):
     state = {
