@@ -1,15 +1,21 @@
 import logging
+import sys
 
 def setup_logger():
     logger = logging.getLogger("agent")
     logger.setLevel(logging.INFO)
 
-    console_handler = logging.StreamHandler()
-    formatter = logging.Formatter("%(asctime)s | %(levelname)s | %(message)s")
-    console_handler.setFormatter(formatter)
+    # ✅ Force UTF-8 console output
+    console_handler = logging.StreamHandler(sys.stdout)
+    console_handler.setFormatter(
+        logging.Formatter("%(asctime)s | %(levelname)s | %(message)s")
+    )
 
-    file_handler = logging.FileHandler("agent.log")
-    file_handler.setFormatter(formatter)
+    # ✅ File handler with UTF-8
+    file_handler = logging.FileHandler("agent.log", encoding="utf-8")
+    file_handler.setFormatter(
+        logging.Formatter("%(asctime)s | %(levelname)s | %(message)s")
+    )
 
     logger.addHandler(console_handler)
     logger.addHandler(file_handler)
