@@ -179,6 +179,8 @@ The contract shows moderate risk due to external call usage...
 
 ## 👨‍💻 Author
 
+Built by Hotnerd000
+
 AI + Web3 Developer specializing in:
 - Smart contract analysis
 - AI-powered tools
