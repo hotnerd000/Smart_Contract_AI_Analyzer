@@ -84,6 +84,9 @@ def clean_json_output(raw):
     return raw
 
 def detect_vulnerabilities(code: str):
+    """
+    Detect common smart contract vulnerabilities using pattern matching.
+    """
     issues = []
 
     # 🔴 Reentrancy (very important)

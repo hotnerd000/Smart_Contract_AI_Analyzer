@@ -1,5 +1,12 @@
 # 🛡️ Smart Contract AI Analyzer
 
+![Python](https://img.shields.io/badge/Python-3.10-blue)
+![Web3](https://img.shields.io/badge/Web3-Smart%20Contracts-purple)
+![AI](https://img.shields.io/badge/AI-LLM-green)
+![License](https://img.shields.io/badge/License-MIT-yellow)
+
+![Demo](demo.gif)
+
 An AI-powered command-line tool that analyzes Ethereum smart contracts for potential security risks and vulnerabilities.
 
 This tool combines **static analysis (rule-based detection)** with **LLM-powered reasoning** to provide structured insights about contract safety.
@@ -34,6 +41,39 @@ This tool combines **static analysis (rule-based detection)** with **LLM-powered
 - OpenRouter (LLMs)
 - Etherscan API (contract source)
 - dotenv (environment variables)
+
+---
+
+## 💡 Why This Project?
+
+Smart contract security is critical in Web3, but audits are expensive and time-consuming.
+
+This tool provides:
+- Instant AI-powered insights
+- Pre-audit risk detection
+- Developer-friendly explanations
+
+It bridges the gap between traditional static analysis and modern AI reasoning.
+
+---
+
+## 🎥 Demo
+
+```bash
+$ python main.py
+```
+
+🔎 Smart Contract AI Analyzer
+
+Enter contract address: 0xdAC17F...
+
+🚨 Risk Score: 6/10 (MEDIUM)
+
+⚠️ Detected Issues:
+- Reentrancy Risk (high)
+
+🧠 AI Insights:
+...
 
 ---
 
@@ -137,9 +177,23 @@ The contract shows moderate risk due to external call usage...
 
 ---
 
-## 🧑‍💻 Author
+## 👨‍💻 Author
 
-Built by Hotnerd000
+AI + Web3 Developer specializing in:
+- Smart contract analysis
+- AI-powered tools
+- Blockchain security
+
+Available for freelance projects.
+
+---
+
+## 🔮 Roadmap
+
+- Integrate Slither for deeper static analysis
+- Add multi-chain support (Polygon, BSC)
+- Web dashboard (FastAPI + React)
+- Batch contract analysis
 
 ---
 
